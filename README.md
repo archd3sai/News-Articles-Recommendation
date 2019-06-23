@@ -1,8 +1,5 @@
 # News Article Recommendation
 
-### Project of Stat-689
-##### Submitted by : Arch Desai, Sohil Parsana, Jay Shah
-
 ### Motivation:
 Online news reading has exploded as the web provides access to
 millions of news sources from around the world. The sheer volume of
