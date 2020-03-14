@@ -34,12 +34,12 @@ personalized news articles which user would share on Twitter. This can
 increase news articles and news service’s popularity.
 
 ### Project Flow:
-1. [**Collect active Twitter users’ data**](https://github.com/archd3sai/News_article_recommendation#1-collect-active-twitter-users-data)
-2. [**Analyze users’ tweets**](https://github.com/archd3sai/News_article_recommendation#2-analyze-users-tweets)
-3. [**Cluster users according to their interests**](https://github.com/archd3sai/News_article_recommendation#3-cluster-users-according-to-their-interests)
-4. [**Perform sentiment analysis and topic modeling**](https://github.com/archd3sai/News_article_recommendation#4-perform-sentiment-analysis-and-topic-modelling)
-5. [**Collect and analyze news articles**](https://github.com/archd3sai/News_article_recommendation#5-collect-and-analyze-news-articles)
-6. [**Get user’s Twitter handle & Recommend news articles**](https://github.com/archd3sai/News_article_recommendation#6-get-users-twitter-handle--recommend-news-articles)
+1. [**Collect active Twitter users’ data**](https://github.com/archd3sai/News-Articles-Recommendation#1-collect-active-twitter-users-data)
+2. [**Analyze users’ tweets**](https://github.com/archd3sai/News-Articles-Recommendation#2-analyze-users-tweets)
+3. [**Cluster users according to their interests**](https://github.com/archd3sai/News-Articles-Recommendation#3-cluster-users-according-to-their-interests)
+4. [**Perform sentiment analysis and topic modeling**](https://github.com/archd3sai/News-Articles-Recommendation#4-perform-sentiment-analysis-and-topic-modelling)
+5. [**Collect and analyze news articles**](https://github.com/archd3sai/News-Articles-Recommendation#5-collect-and-analyze-news-articles)
+6. [**Get user’s Twitter handle & Recommend news articles**](https://github.com/archd3sai/News-Articles-Recommendation#6-get-users-twitter-handle--recommend-news-articles)
 
 
 ### 1. Collect active Twitter users’ data
@@ -54,7 +54,7 @@ Washington Post. We identify them as active news readers.
 - Filter users based on their twitter activity and popularity
 - Collect information from Twitter profiles of these filtered users
 
-![Collecting Twietter Users Data](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/1.0TwitterFlow.png)
+![Collecting Twitter Users Data](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/1.0TwitterFlow.png)
 
 ### 2. Analyze users’ Tweets
 The tweets contains URLs, Usernames, non-english words, punctuations and
@@ -80,7 +80,7 @@ analysis of words (WordNetLemmatizer)
     - Caring - Car : Stemming
     - Caring - Care : Lemmatization
 
-![Text Cleaning](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/2.0Textcleaning.png)
+![Text Cleaning](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/2.0Textcleaning.png)
 
 ### 3. Cluster users according to their interests
 We can cluster users based on their similarity of interests retrieved from their tweets and that requires vectorized representation of tweets.
@@ -89,7 +89,7 @@ We can cluster users based on their similarity of interests retrieved from their
   - TF : Gives frequency of words in each user’s tweets
   - IDF : Calculates the weight of rare words across all users’ tweets. The words that occur rarely in the corpus have a high IDF score.
 
-    ![TDIF](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/3.0TDIF.png)
+    ![TDIF](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/3.0TDIF.png)
 
   - TF-IDF is a weight that ranks the importance of a term in its contextual document corpus.
   - Perform K-means clustering to cluster users based on tf-idf matrix.
@@ -97,13 +97,13 @@ We can cluster users based on their similarity of interests retrieved from their
     - Distance Matrix = 1 - Cosine Similarity of users’ tweets
     - Cosine similarity = (dot product of two vectors) / (product of vectors’ magnitudes)
     - The cosine of the angle between the vectors is a good indicator of similarity
-      ![cosine](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/3.0cosine.png)
+      ![cosine](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/3.0cosine.png)
     - Reduce dimension matrix using multi-dimension-scaling. **(Library: Skleran’s MDS)**
 - Selection of optimal K with Elbow Method
   - The elbow method, in which the sum of squares at each number of clusters is calculated and graphed, and the user looks for a change of slope from steep to shallow (an elbow) to determine the optimal number of clusters.
-  ![optimalK](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/SelectK.png)
+  ![optimalK](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/SelectK.png)
   - We created 5 clusters and top words in 5 clusters are shown below.
-  ![SelectedClusters](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/3.0Clusters.png)
+  ![SelectedClusters](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/3.0Clusters.png)
   - Clusterd User's Vizualization:
     - Here, we have used Manifold learning for vizualization.High-dimensional datasets can be very difficult to visualize. While data in two or three dimensions can be plotted to show the inherent structure of the data, equivalent high-dimensional plots are much less intuitive. To aid visualization of the structure of a dataset, the dimension must be reduced in some way.
 
@@ -113,7 +113,7 @@ We can cluster users based on their similarity of interests retrieved from their
 
     - In general, is a technique used for analyzing similarity or dissimilarity data. MDS attempts to model similarity or dissimilarity data as distances in a geometric spaces. The data can be ratings of similarity between objects, interaction frequencies of molecules, or trade indices between countries
 
-    ![Users Clusters](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/UsersClusters.png)
+    ![Users Clusters](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/UsersClusters.png)
 
 ### 4. Perform Sentiment Analysis and Topic Modelling
 
@@ -121,7 +121,7 @@ Sentiment analysis - Computational study of opinions, sentiments, evaluations, a
 
 It is also called opinion mining.
 
-![Sentiment Analysis](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/SentimentAnalysis.png)
+![Sentiment Analysis](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/SentimentAnalysis.png)
 
 We have used pretrained model from Textblob library that gives two results:
 
@@ -133,7 +133,7 @@ We have used pretrained model from Textblob library that gives two results:
 
 #### **Topic Modeling**
 
-![Topic_model](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/Topic_model.png)
+![Topic_model](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/Topic_model.png)
 
 Each topic is a distribution of words; each document is a mixture of corpus-wide topics; and each word is drawn from one of those topics.
 
@@ -141,7 +141,7 @@ In reality, we only observe documents. The other structures are hidden variables
 
 A simple LDA algorithm is described below:
 
-![Topic_model2](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/Topic_model2.png)
+![Topic_model2](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/Topic_model2.png)
 
 Here,
 -Per-document topics proportions 𝜃_𝑑 is a multinomial distribution, which is generated from Dirichlet distribution parameterized by 𝛼.
@@ -166,9 +166,9 @@ In our case, following approach for topic model is adopted:
 
 After following this approach, we can get tuned topic model for each cluster. An interactive way to viusalize the topics can be found in the following visualizations:
 
-[Interactive Vizualization of Topic model for Cluster 1](https://htmlpreview.github.io/?https://github.com/archd3sai/News_article_recommendation/blob/master/lda.html)
+[Interactive Vizualization of Topic model for Cluster 1](https://htmlpreview.github.io/?https://github.com/archd3sai/News-Articles-Recommendation/blob/master/lda.html)
 
-[Interactive Vizualization of Topic model for Cluster 2](https://htmlpreview.github.io/?https://github.com/archd3sai/News_article_recommendation/blob/master/lda.html)
+[Interactive Vizualization of Topic model for Cluster 2](https://htmlpreview.github.io/?https://github.com/archd3sai/News-Articles-Recommendation/blob/master/lda.html)
 
 To use the visualization tool, click a circle in the left panel to select a topic, and the bar chart in the right panel will display the 30 most relevant terms for the selected topic, where we define the relevance of a term to a topic, given a weight parameter, 0 ≤ λ ≤ 1, as λ log(p(term | topic)) + (1 - λ) log(p(term | topic)/p(term)).
 
@@ -208,7 +208,7 @@ There are two main types of collaborative filtering: user-based and item-based. 
      - this approach fails at recommending newly-published, unexplored articles: articles that are relevant to groups of readers but hadn’t yet been read by any reader in that group.
 
 
-![Recommendation](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/6.0_recommendations.png)
+![Recommendation](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/6.0_recommendations.png)
 
 
 3. **Hybrid Filtering**
@@ -242,7 +242,7 @@ There are two main types of collaborative filtering: user-based and item-based. 
 |    World News    	|    4    	|    https://www.cnn.com/2019/04/15/australia/australia-racism-media-christchurch-attack-intl/index.html    	|    http://www.nytimes.com/2019/04/24/opinion/rwanda-genocide.html    	|
 
 - Sample Articles identified wih the Clusters:
-![Recommendation2](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/6.0_clusters.jpeg)
+![Recommendation2](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/6.0_clusters.jpeg)
 
 - Here we added weight to our recommendation personalized by individual user
 - After user has been classified into clusters, we will calculate similarity score of user’s interest with identified articles within each clusters.
@@ -250,7 +250,7 @@ There are two main types of collaborative filtering: user-based and item-based. 
 - Based on this weight criteria we will rank the articles personalized for each user
 - We have used Jaccard Similarity here.
 #### Final Pipeline
-![FinalPipeline](https://github.com/archd3sai/News_article_recommendation/blob/master/Images/Final_pipeline.png)
+![FinalPipeline](https://github.com/archd3sai/News-Articles-Recommendation/blob/master/Images/Final_pipeline.png)
 
 - Currently we have already trained this model on latest few articles.
 - If you want to try this model, you can clone this repo and run following code in your prompt.
@@ -281,5 +281,5 @@ python test.py <user_id>
 
 
 Project can be found at following link:
-[Project_code](https://nbviewer.jupyter.org/github/archd3sai/News_article_recommendation/blob/581d0ca29a366121f28f0529e684cb39ec635a48/Final_notebook.ipynb)
+[Project_code](https://nbviewer.jupyter.org/github/archd3sai/News-Articles-Recommendation/blob/581d0ca29a366121f28f0529e684cb39ec635a48/Final_notebook.ipynb)
 Alternatively, this note book is also devided into train and test script.
