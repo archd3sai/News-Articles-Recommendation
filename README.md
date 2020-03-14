@@ -3,16 +3,14 @@
 ### Motivation:
 Online news reading has exploded as the web provides access to
 millions of news sources from around the world. The sheer volume of
-articles can be overwhelming to readers sometimes.
-
-**A key challenge of news
+articles can be overwhelming to readers sometimes. A key challenge of news
 service website is help users to find news articles that are
-interesting to read.** This is advantageous to both users and news
+interesting to read. This is advantageous to both users and news
 service, as it enables the user to rapidly find what he or she needs and
 the news service to help retain and increase customer base.
 
 
-### Objective of the Project:
+### Objective:
 Objective of the project is to build a hybrid-filtering personalized news
 articles recommendation system which can suggest articles from popular
 news service providers based on reading history of twitter users who
@@ -23,7 +21,7 @@ This system can be very helpful to Online News Providers to target right
 news articles to right users.
 
 
-### But Why Twitter?
+### Why Twitter?
 
 #### Statistics
 - 74% of Twitter users say they use the network to get their news.
